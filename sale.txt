@@ -1,0 +1,115 @@
+{
+	val swampAudioNode            = PK("9hKFHa886348VhfM1BRfLPKi8wwXMnyVqqmri9p5zPFE8qgMMui").propBytes
+	val withdrawFee               = 10000000L
+	val withdrawIndictationScript = fromBase58("aq986FhxwmgCvSvUiyFKifsw71aW6ShL8epL5PJ6v15")
+	
+	val heldERG0              = SELF.value
+	val heldTokens0           = SELF.tokens
+	val initialShares         = SELF.R4[Coll[(Long,Coll[Byte])]].get
+	val initialTokenList      = SELF.R5[Coll[Coll[Byte]]].get
+	val initialTokenAmount    = SELF.R6[Long].get
+	val initialWithdrawTokens = SELF.R7[(Coll[Byte], Long)].get
+	
+	if (CONTEXT.dataInputs.size == 0) {
+	
+		val successor = OUTPUTS(0)
+		
+		val heldERG1            = successor.value
+		val heldTokens1         = successor.tokens
+		val finalShares         = successor.R4[Coll[(Long,Coll[Byte])]].get
+		val finalTokenList      = successor.R5[Coll[Coll[Byte]]].get
+		val finalTokenAmount    = successor.R6[Long].get
+		val finalWithdrawTokens = successor.R7[(Coll[Byte], Long)].get
+		
+		val deltaERG = heldERG1 - heldERG0
+		
+		val validSelfSuccessorScript = successor.propositionBytes == SELF.propositionBytes
+		
+		val validDeltaERG = deltaERG >= 0
+		
+		val validRegisters = (
+			finalShares == initialShares && 
+			finalTokenList == initialTokenList && 
+			finalTokenAmount == initialTokenAmount - 1 &&
+			finalWithdrawTokens == initialWithdrawTokens
+		)
+		
+		val validSuccessorTokens = initialTokenList.forall { 
+			(id: Coll[Byte]) => successor.tokens.exists {
+				(token: (Coll[Byte], Long)) => token(0) == id && token(1) >= finalTokenAmount
+			}
+		}
+
+		val validShares = initialShares.forall {
+			(share : (Long,Coll[Byte])) => OUTPUTS.exists {
+				(output : Box) => output.propositionBytes == share(1) && output.value >= share(0)
+			}
+		}
+		
+		(
+			validSelfSuccessorScript &&
+			validDeltaERG &&
+			validSuccessorTokens &&
+			validRegisters &&
+			validShares
+		)
+	} else {
+		val withdrawalIndication = CONTEXT.dataInputs(0)
+		
+		val withdrawalTokens = withdrawalIndication.tokens(0)
+		
+		val validIndication     = initialWithdrawTokens == withdrawalTokens
+		val validWithdrawScript = blake2b256(withdrawalIndication.propositionBytes) == withdrawIndictationScript 
+		
+		val successor     = OUTPUTS(0)
+		val swampAudioBox = OUTPUTS(1)
+		val withdrawalBox = OUTPUTS(2)
+		
+		val tokenWithdrawalIndex = withdrawalBox.R4[Int].get
+		val withdrawnTokens      = withdrawalBox.tokens(0)
+		
+		val heldERG1            = successor.value
+		val heldTokens1         = successor.tokens
+		val finalShares         = successor.R4[Coll[(Long,Coll[Byte])]].get
+		val finalTokenList      = successor.R5[Coll[Coll[Byte]]].get
+		val finalTokenAmount    = successor.R6[Long].get
+		val finalWithdrawTokens = successor.R7[(Coll[Byte], Long)].get
+		
+		val validSelfSuccessorScript = successor.propositionBytes == SELF.propositionBytes
+		
+		val filteredWithdrawInitialTokens = heldTokens0.filter{
+			(token: (Coll[Byte], Long)) => token(0) != initialTokenList(tokenWithdrawalIndex)
+		}
+		val filteredWithdrawFinalTokens = heldTokens1.filter{
+			(token: (Coll[Byte], Long)) => token(0) != initialTokenList(tokenWithdrawalIndex)
+		}
+		
+		val validSuccessorWithdrawnTokens = filteredWithdrawInitialTokens == filteredWithdrawFinalTokens
+		
+		val validRegisters = (
+			finalShares == initialShares && 
+			finalTokenList == initialTokenList && 
+			finalTokenAmount == initialTokenAmount &&
+			finalWithdrawTokens == initialWithdrawTokens
+		)
+		
+		val validWithdrawer      = withdrawalBox.propositionBytes == initialShares(tokenWithdrawalIndex)(1)
+		val validTokensWithdrawn = withdrawnTokens._1 == initialTokenList(tokenWithdrawalIndex) && withdrawnTokens._2 >= initialTokenAmount
+		
+		val validSwampAudioScript = swampAudioBox.propositionBytes == swampAudioNode
+		val validSwampValue       = swampAudioBox.value >= withdrawFee
+	
+		(
+			validWithdrawer &&
+			validTokensWithdrawn &&
+			validSwampValue &&
+			validSwampAudioScript &&
+			validSelfSuccessorScript &&
+			validSuccessorWithdrawnTokens &&
+			validIndication &&
+			validWithdrawScript &&
+			validRegisters		
+			
+		)
+	}
+}
