@@ -13,7 +13,7 @@ Alice, Bob, Charlie and Daniel wish to form a mutual agreement contract like so:
 | Party        | Assets to provide      | Sale Revenue  | Number of assets  |
 |--------------|------------------------|---------------|-------------------|
 | Alice        | Test Asset 1           | 0.1 Erg       | 100,000           |
-| Bob          | Test Asset 2           | 0.1 Erg       | 100,000           |
+| Bob          | Test Asset 2           |               | 100,000           |
 |              | Test Asset 3           | 0.5 Erg       | 100,000           |
 | Charlie      | Test Asset 4           | 0.2 Erg       | 100,000           |
 | Daniel       | Test Asset 5           | 0.1 Erg       | 100,000           |
