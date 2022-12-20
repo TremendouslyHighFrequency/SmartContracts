@@ -46,7 +46,7 @@ Note, the contract allows users to add multiple assets in a single transaction, 
 Withdraw Assets
 At any stage before the assets are sent to the sale contract, any user can withdraw their assets from the bootstrap contract. There are 3 necessary outputs for this transaction which must be set in order as:
 
-[Screenshot 2022-12-20 at 8 20 10 AM](https://user-images.githubusercontent.com/112732047/208715174-a7ca5502-48e5-4355-a71f-1ec059d1c12a.png)
+![Screenshot 2022-12-20 at 8 20 10 AM](https://user-images.githubusercontent.com/112732047/208715174-a7ca5502-48e5-4355-a71f-1ec059d1c12a.png)
 
 Let’s say Charlie decides to withdraw her assets. Here is her transaction on-chain:
 https://explorer.ergoplatform.com/en/transactions/b0000ea032049f26097987ca348bc08b70558005194866426435a02e4d48da44
@@ -55,7 +55,7 @@ Send to Sale Contract
 
 Once all parties have provided their assets, its time to send to the sale contract! There are 2 necessary outputs for this transaction which must be set in order as:
 
-[Screenshot 2022-12-20 at 8 20 15 AM](https://user-images.githubusercontent.com/112732047/208715199-a80e98fc-3477-473f-9c11-d9055c2c73f1.png)
+![Screenshot 2022-12-20 at 8 20 15 AM](https://user-images.githubusercontent.com/112732047/208715199-a80e98fc-3477-473f-9c11-d9055c2c73f1.png)
 
 
 Note, the withdrawal NFT id will be the same as the boxId of the bootstrap contract box which is used as an input for the transaction. This also means the sale UTXO should be in Input position 0.
@@ -67,7 +67,7 @@ https://explorer.ergoplatform.com/en/transactions/391a8b8c351eed05e02c1016e39f92
 The Sale Contract:
 Now that the parties have their assets held in the sale contract, it is time for a buyer to make a purchase. To recap, lets have a look at Alice, Bob, Charlie and Dan’s sale box, which is a box under the sale contract address holding their assets and terms of sale.
 
-[Screenshot 2022-12-20 at 8 20 29 AM](https://user-images.githubusercontent.com/112732047/208715241-b3a3c769-bfee-4f32-ac56-c501d11ad98d.png)
+![Screenshot 2022-12-20 at 8 20 29 AM](https://user-images.githubusercontent.com/112732047/208715241-b3a3c769-bfee-4f32-ac56-c501d11ad98d.png)
 
 Buyer makes a purchase
 Anyone can purchase one copy of each asset from the sale box by selecting the sale box as an input for a transaction where the buyer sends one of each token to themselves and creates outputs containing the sale revenue for each artist.
@@ -86,7 +86,7 @@ The withdraw NFT contract holds the withdrawal NFTs on behalf of the artists, wh
 Withdrawal:
 Only one NFT can be withdrawal token can be withdrawn at a time. To withdraw, there are 3 necessary outputs which must be set in order as:
 
-[Screenshot 2022-12-20 at 8 20 36 AM](https://user-images.githubusercontent.com/112732047/208715285-af5cd4ff-25a6-4f8f-b2b2-c7d5c39ce34c.png)
+![Screenshot 2022-12-20 at 8 20 36 AM](https://user-images.githubusercontent.com/112732047/208715285-af5cd4ff-25a6-4f8f-b2b2-c7d5c39ce34c.png)
 
 Let’s say Charlie decides to withdraw her withdrawal NFT, this is her transaction on chain:
 https://explorer.ergoplatform.com/en/transactions/c2d81f4a14fab6b72b4517389596988615a3858112b67515b4dbdc39bf6665ec
@@ -95,7 +95,7 @@ Withdrawal Indication Contract:
 The withdrawal indication contract is the destination artists can send their withdrawal NFT if they wish to terminate a sale contract.
 To begin, one party needs to send their withdrawal NFT to the indication contract with the following registers:
 
-[Screenshot 2022-12-20 at 8 20 40 AM](https://user-images.githubusercontent.com/112732047/208715320-bc971ec4-64af-480b-844a-a1f7002a79cc.png)
+![Screenshot 2022-12-20 at 8 20 40 AM](https://user-images.githubusercontent.com/112732047/208715320-bc971ec4-64af-480b-844a-a1f7002a79cc.png)
 
 Let’s say Alice begins this process, with her on-chain transaction here:
 https://explorer.ergoplatform.com/en/transactions/be63577df49d47c4ad8e944156680440c73df50aeff5e8bbdfeff6c7f0a25c8a
@@ -111,8 +111,8 @@ https://explorer.ergoplatform.com/en/transactions/2112b35a004a63b551eda1abefd3c9
 Withdraw withdrawal NFT
 At any stage before all the withdrawal NFTs are held in the indication contract, any user can withdraw their assets from the indication contract. There are 3 necessary outputs for this transaction which must be set in order as:
 
-[Screenshot 2022-12-20 at 8 20 45 AM](https://user-images.githubusercontent.com/112732047/208715365-eca03398-a951-408b-b5e4-126f10641fbf.png)
-[Screenshot 2022-12-20 at 8 20 49 AM](https://user-images.githubusercontent.com/112732047/208715468-5ced50c4-28f2-454e-a233-43668be1ce1e.png)
+![Screenshot 2022-12-20 at 8 20 45 AM](https://user-images.githubusercontent.com/112732047/208715365-eca03398-a951-408b-b5e4-126f10641fbf.png)
+![Screenshot 2022-12-20 at 8 20 49 AM](https://user-images.githubusercontent.com/112732047/208715468-5ced50c4-28f2-454e-a233-43668be1ce1e.png)
 
 Let’s say Bob decides to withdraw his assets. Here is his transaction on-chain:
 https://explorer.ergoplatform.com/en/transactions/1858047763fa98b95f653b47ffcba73b445dee24a66c8e718fcd8cf16ee76f1c
