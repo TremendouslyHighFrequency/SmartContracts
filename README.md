@@ -46,7 +46,7 @@ Note, the contract allows users to add multiple assets in a single transaction, 
 Withdraw Assets
 At any stage before the assets are sent to the sale contract, any user can withdraw their assets from the bootstrap contract. There are 3 necessary outputs for this transaction which must be set in order as:
 
-![Screenshot 2022-12-20 at 8 20 10 AM](https://user-images.githubusercontent.com/112732047/208715174-a7ca5502-48e5-4355-a71f-1ec059d1c12a.png)
+[Screenshot 2022-12-20 at 8 20 10 AM](https://user-images.githubusercontent.com/112732047/208715174-a7ca5502-48e5-4355-a71f-1ec059d1c12a.png)
 
 Let’s say Charlie decides to withdraw her assets. Here is her transaction on-chain:
 https://explorer.ergoplatform.com/en/transactions/b0000ea032049f26097987ca348bc08b70558005194866426435a02e4d48da44
@@ -112,7 +112,7 @@ Withdraw withdrawal NFT
 At any stage before all the withdrawal NFTs are held in the indication contract, any user can withdraw their assets from the indication contract. There are 3 necessary outputs for this transaction which must be set in order as:
 
 [Screenshot 2022-12-20 at 8 20 45 AM](https://user-images.githubusercontent.com/112732047/208715365-eca03398-a951-408b-b5e4-126f10641fbf.png)
-![Screenshot 2022-12-20 at 8 20 49 AM](https://user-images.githubusercontent.com/112732047/208715468-5ced50c4-28f2-454e-a233-43668be1ce1e.png)
+[Screenshot 2022-12-20 at 8 20 49 AM](https://user-images.githubusercontent.com/112732047/208715468-5ced50c4-28f2-454e-a233-43668be1ce1e.png)
 
 Let’s say Bob decides to withdraw his assets. Here is his transaction on-chain:
 https://explorer.ergoplatform.com/en/transactions/1858047763fa98b95f653b47ffcba73b445dee24a66c8e718fcd8cf16ee76f1c
