@@ -1,7 +1,7 @@
 {
 	val withdrawFee         = 10000000L
-	val saleSuccessorScript = fromBase58("69PVEA9cLTYuvwbhZtJANoKYgX6uz1oLZb5bxpvmDs1T")
-	val terminationScript   = fromBase58("C7dwP7fVK5aJpXzgvWGAjDwr88bpztxeHbCyzD5mmSkc") 
+	val saleSuccessorScript = fromBase58("2wjy8dSAvwKdmCcaz1XwjKdcHjsvHqhHPh4FzshLcZ3AunL6ZykaedY1S3vjevgcSvVoiGJ5K2bGarWmjA5C6R4X")
+	val terminationScript   = fromBase58("32NjucdcZFvQfcjDY3it2jDNerkrG7ue8KMEzzC4eCfosWFb7roQVwFkQ6sH7m97W9zwNLraFw6r1FVUfo2VaZJ1") 
 	val swampAudioNode      = PK("9hKFHa886348VhfM1BRfLPKi8wwXMnyVqqmri9p5zPFE8qgMMui").propBytes
 
 	val heldERG0           = SELF.value

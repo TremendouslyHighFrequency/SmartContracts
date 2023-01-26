@@ -1,4 +1,4 @@
-{
+     {
 	val swampAudioNode = PK("9hKFHa886348VhfM1BRfLPKi8wwXMnyVqqmri9p5zPFE8qgMMui").propBytes
 	val withdrawFee    = 10000000L
 	
@@ -36,7 +36,8 @@
 		validSuccessorScript &&
 		validSuccessorValue &&
 		validSuccesorTokens &&
-		validSuccessorOwners
+		validSuccessorOwners && 
+		HEIGHT < 1667857691 // trivial condition for uniqueness
 	)
 
 }

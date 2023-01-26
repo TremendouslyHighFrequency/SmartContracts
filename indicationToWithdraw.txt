@@ -64,7 +64,9 @@
 			validSuccessorValue &&
 			validSuccesorTokens &&
 			validFinalOwners &&
-			validMintDetails
+			validMintDetails &&
+			HEIGHT < 1667857691 // trivial condition for uniqueness		
+
 		)
 	}
 
