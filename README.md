@@ -1,4 +1,4 @@
-#Introduction
+## Introduction
 The functionality of the smart contracts is related to music publishing and the management of sales and royalty distribution among multiple participants. Here is a description of the functionalities:
 
 1. Bootstrap Contract: This contract is the starting point in the series of transactions. It is used for depositing funds and token ownership information. It can also handle the distribution of tokens to multiple owners based on shares and conditions of the termination of the contract.
@@ -15,7 +15,7 @@ The system also provides a mechanism for the owners to terminate the contract an
 
 One of the benefits of this system is that it's entirely decentralized and managed by smart contracts on the Ergo blockchain. This means that it doesn't require a central authority to manage the sales and distribution of funds, and it can operate transparently and autonomously.
 
-##The big picture:
+## The big picture:
 
 For a general overview of all the contracts, this diagram can be helpful. The diagram describes the context of each contract, the content of the involved UTXOs and the spending paths.
 
