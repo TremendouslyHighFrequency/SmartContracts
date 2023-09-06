@@ -1,20 +1,3 @@
-## Introduction
-The functionality of the smart contracts is related to music publishing and the management of sales and royalty distribution among multiple participants. Here is a description of the functionalities:
-
-1. Bootstrap Contract: This contract is the starting point in the series of transactions. It is used for depositing funds and token ownership information. It can also handle the distribution of tokens to multiple owners based on shares and conditions of the termination of the contract.
-
-2. IndicationToWithdraw Contract: This contract is used to manage withdrawal requests from the contract. Owners of the tokens can submit a request to withdraw their tokens. The contract checks whether the withdrawal is valid and if it is, it allows the withdrawal to proceed. 
-
-3. Sale Contract: This contract handles the sale of tokens. When a sale is made, this contract checks the validity of the sale and transfers the sold tokens to the new owner. It serves to handle withdrawals, allowing token owners to withdraw their tokens after the sale.
-
-4. Withdraw Contract: This contract serves to handle the final withdrawal of tokens by their owners. The owners can withdraw their tokens from the contract, and the contract ensures that only the rightful owners can withdraw their tokens.
-
-The overall operation is a system for managing the sale of music assets represented by tokens. The owners of the music can deposit their tokens into the contract, and customers can purchase the tokens, representing the ownership or usage rights of the music. The proceeds from the sales are distributed among the original owners according to their shares. Owners can withdraw their share of the proceeds at any time.
-
-The system also provides a mechanism for the owners to terminate the contract and distribute the remaining funds among themselves. This might be used, for example, when the music is no longer being sold, and the owners want to close the contract and distribute the remaining funds.
-
-One of the benefits of this system is that it's entirely decentralized and managed by smart contracts on the Ergo blockchain. This means that it doesn't require a central authority to manage the sales and distribution of funds, and it can operate transparently and autonomously.
-
 ## The big picture:
 
 For a general overview of all the contracts, this diagram can be helpful. The diagram describes the context of each contract, the content of the involved UTXOs and the spending paths.
