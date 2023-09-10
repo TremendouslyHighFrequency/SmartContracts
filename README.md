@@ -1,5 +1,8 @@
 ## The big picture:
 
+<img width="1432" alt="image" src="/Contracts.png">
+
+
 For a general overview of all the contracts, this diagram can be helpful. The diagram describes the context of each contract, the content of the involved UTXOs and the spending paths.
 
 <img width="1432" alt="image" src="https://user-images.githubusercontent.com/112732047/192360881-5035ed14-ded6-4384-a75e-c8f10d9ae1ba.png">
